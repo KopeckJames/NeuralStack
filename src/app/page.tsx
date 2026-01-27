@@ -47,23 +47,32 @@ export default function Home() {
               We don't just build websites; we build intelligent systems. Our dual expertise allows us
               to integrate AI directly into your business workflow.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
-              <Card className="glass border-primary/10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+              <Card className="glass border-primary/10 overflow-hidden group/card">
                 <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <Bot className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 overflow-hidden mb-4 border border-primary/20 group-hover/card:scale-110 transition-transform">
+                    <img src="/nstack.png" alt="Scalable Infrastructure" className="w-full h-full object-cover" />
                   </div>
-                  <h3 className="font-bold mb-2 text-lg">AI-Driven Solutions</h3>
-                  <p className="text-sm text-muted-foreground">Symbolizes intelligence and advanced processing.</p>
+                  <h3 className="font-bold mb-2 text-base">Scalable Infrastructure</h3>
+                  <p className="text-xs text-muted-foreground">Represents growth and expandability.</p>
                 </CardContent>
               </Card>
-              <Card className="glass border-primary/10">
+              <Card className="glass border-primary/10 overflow-hidden group/card">
                 <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <Cpu className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 overflow-hidden mb-4 border border-primary/20 group-hover/card:scale-110 transition-transform">
+                    <img src="/aisol.png" alt="AI-Driven Solutions" className="w-full h-full object-cover" />
                   </div>
-                  <h3 className="font-bold mb-2 text-lg">Scalable Infrastructure</h3>
-                  <p className="text-sm text-muted-foreground">Represents growth and expandability built for scale.</p>
+                  <h3 className="font-bold mb-2 text-base">AI-Driven Solutions</h3>
+                  <p className="text-xs text-muted-foreground">Symbolizes intelligence and advanced processing.</p>
+                </CardContent>
+              </Card>
+              <Card className="glass border-primary/10 overflow-hidden group/card">
+                <CardContent className="pt-6">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 overflow-hidden mb-4 border border-primary/20 group-hover/card:scale-110 transition-transform">
+                    <img src="/sgrowth.png" alt="Secure Growth" className="w-full h-full object-cover" />
+                  </div>
+                  <h3 className="font-bold mb-2 text-base">Secure Growth</h3>
+                  <p className="text-xs text-muted-foreground">Signifies safety, protection, and reliability.</p>
                 </CardContent>
               </Card>
             </div>
