@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-24 pb-24">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 overflow-hidden bg-dark-flow min-h-[80vh] flex items-center">
+      <section className="relative pt-32 pb-16 overflow-hidden min-h-[80vh] flex items-center">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="outline" className="mb-6 py-1 px-4 border-primary/50 text-white backdrop-blur-sm bg-primary/20">
@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* Featured Case Studies */}
-      <section className="bg-secondary/30 py-24 border-y border-border/50">
+      <section className="py-24 border-y border-border/50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
             <div>

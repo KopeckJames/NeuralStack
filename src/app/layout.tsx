@@ -27,11 +27,26 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${fontHeading.variable} ${fontBody.variable} font-body antialiased min-h-screen flex flex-col`}
+        className={`${fontHeading.variable} ${fontBody.variable} font-body antialiased min-h-screen flex flex-col relative`}
       >
-        <div className="fixed inset-0 neural-grid opacity-20 pointer-events-none" />
+        {/* Video Background Container */}
+        <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute min-w-full min-h-full object-cover"
+          >
+            <source src="/landing video.mp4" type="video/mp4" />
+          </video>
+          {/* Persistent Dark Overlay */}
+          <div className="absolute inset-0 bg-[#0A0E45]/85" />
+        </div>
+
+        <div className="fixed inset-0 neural-grid opacity-20 pointer-events-none z-0" />
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow relative z-10">
           {children}
         </main>
         <Footer />
