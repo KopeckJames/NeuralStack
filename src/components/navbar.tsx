@@ -23,10 +23,11 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full glass border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="bg-primary p-1.5 rounded-lg group-hover:scale-110 transition-transform">
-            <Brain className="w-6 h-6 text-primary-foreground" />
-          </div>
-          <span className="text-xl font-bold tracking-tight">Neural Stack</span>
+          <img
+            src="/logotrans.png"
+            alt="Neural Stack Logo"
+            className="h-12 w-auto rounded-sm group-hover:scale-105 transition-transform duration-300"
+          />
         </Link>
 
         {/* Desktop Nav */}

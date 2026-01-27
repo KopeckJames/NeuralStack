@@ -38,7 +38,7 @@ export default function RootLayout({
             playsInline
             className="absolute min-w-full min-h-full object-cover"
           >
-            <source src="/landing video.mp4" type="video/mp4" />
+            <source src="/lpv2.mp4" type="video/mp4" />
           </video>
           {/* Persistent Dark Overlay */}
           <div className="absolute inset-0 bg-[#0A0E45]/85" />

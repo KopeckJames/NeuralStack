@@ -9,10 +9,11 @@ export function Footer() {
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-2">
                         <Link href="/" className="flex items-center gap-2 mb-4 group">
-                            <div className="bg-primary p-1 rounded-lg">
-                                <Brain className="w-5 h-5 text-primary-foreground" />
-                            </div>
-                            <span className="text-lg font-bold">Neural Stack</span>
+                            <img
+                                src="/logotrans.png"
+                                alt="Neural Stack Logo"
+                                className="h-[60px] w-auto rounded-sm group-hover:scale-105 transition-transform duration-300"
+                            />
                         </Link>
                         <p className="text-muted-foreground max-w-sm mb-6">
                             Specialized generalists bridging the gap between advanced AI/ML implementation and

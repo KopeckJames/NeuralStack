@@ -109,17 +109,11 @@ export default function Home() {
               <Card className="overflow-hidden border-none glass hover:ring-1 ring-primary/50 transition-all">
                 <div className="aspect-video bg-muted relative overflow-hidden">
                   <img
-                    src="/cooforrent_preview.webp"
-                    alt="Cooforrent Site Preview"
-                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                    src="/cooforrent_screenshot.png"
+                    alt="Cooforrent Workflow Automation"
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-primary/20 mix-blend-overlay pointer-events-none" />
-                  <div className="absolute top-4 left-4">
-                    <div className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
-                      <Cpu className="w-3.5 h-3.5 text-primary" />
-                      <span className="text-xs font-bold text-white uppercase tracking-wider">Live Preview</span>
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-primary/10 mix-blend-overlay pointer-events-none" />
                 </div>
                 <CardContent className="p-8">
                   <div className="flex gap-2 mb-4">
@@ -139,14 +133,12 @@ export default function Home() {
             <Link href="/portfolio/velvet-water" className="group">
               <Card className="overflow-hidden border-none glass hover:ring-1 ring-primary/50 transition-all">
                 <div className="aspect-video bg-muted relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent" />
-                  <div className="absolute inset-0 flex items-center justify-center p-12">
-                    <div className="text-center group-hover:scale-105 transition-transform duration-500">
-                      <Globe className="w-16 h-16 text-accent mx-auto mb-4 opacity-50" />
-                      <h3 className="text-2xl font-bold">Velvet Water</h3>
-                      <p className="text-sm text-muted-foreground">B2C Home Services E-commerce</p>
-                    </div>
-                  </div>
+                  <img
+                    src="/velvet_screenshot.png"
+                    alt="Velvet Water E-commerce"
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-accent/10 mix-blend-overlay pointer-events-none" />
                 </div>
                 <CardContent className="p-8">
                   <div className="flex gap-2 mb-4">
