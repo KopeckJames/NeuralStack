@@ -40,51 +40,50 @@ export default function Home() {
 
       {/* Services Brief */}
       <section className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="flex flex-col gap-6">
-            <h2 className="text-4xl font-bold">Specialized Services</h2>
-            <p className="text-muted-foreground text-lg">
-              We don't just build websites; we build intelligent systems. Our dual expertise allows us
-              to integrate AI directly into your business workflow.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col gap-12 text-center items-center">
+            <div className="max-w-3xl space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold">Specialized Services</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                We don't just build websites; we build intelligent systems. Our dual expertise allows us
+                to integrate AI directly into your business workflow.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
               <Card className="glass border-primary/10 overflow-hidden group/card">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 overflow-hidden mb-4 border border-primary/20 group-hover/card:scale-110 transition-transform">
+                <CardContent className="pt-8 text-center flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 overflow-hidden mb-6 border border-primary/20 group-hover/card:scale-110 transition-transform">
                     <img src="/nstack.png" alt="Scalable Infrastructure" className="w-full h-full object-cover" />
                   </div>
-                  <h3 className="font-bold mb-2 text-base">Scalable Infrastructure</h3>
-                  <p className="text-xs text-muted-foreground">Represents growth and expandability.</p>
+                  <h3 className="font-bold mb-3 text-lg">Scalable Infrastructure</h3>
+                  <p className="text-sm text-muted-foreground">High-performance architecture designed for exponential growth.</p>
                 </CardContent>
               </Card>
               <Card className="glass border-primary/10 overflow-hidden group/card">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 overflow-hidden mb-4 border border-primary/20 group-hover/card:scale-110 transition-transform">
+                <CardContent className="pt-8 text-center flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 overflow-hidden mb-6 border border-primary/20 group-hover/card:scale-110 transition-transform">
                     <img src="/aisol.png" alt="AI-Driven Solutions" className="w-full h-full object-cover" />
                   </div>
-                  <h3 className="font-bold mb-2 text-base">AI-Driven Solutions</h3>
-                  <p className="text-xs text-muted-foreground">Symbolizes intelligence and advanced processing.</p>
+                  <h3 className="font-bold mb-3 text-lg">AI-Driven Solutions</h3>
+                  <p className="text-sm text-muted-foreground">Advanced intelligence integrated into your core business logic.</p>
                 </CardContent>
               </Card>
               <Card className="glass border-primary/10 overflow-hidden group/card">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 overflow-hidden mb-4 border border-primary/20 group-hover/card:scale-110 transition-transform">
+                <CardContent className="pt-8 text-center flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 overflow-hidden mb-6 border border-primary/20 group-hover/card:scale-110 transition-transform">
                     <img src="/sgrowth.png" alt="Secure Growth" className="w-full h-full object-cover" />
                   </div>
-                  <h3 className="font-bold mb-2 text-base">Secure Growth</h3>
-                  <p className="text-xs text-muted-foreground">Signifies safety, protection, and reliability.</p>
+                  <h3 className="font-bold mb-3 text-lg">Secure Growth</h3>
+                  <p className="text-sm text-muted-foreground">Fortified development ensuring safety and long-term reliability.</p>
                 </CardContent>
               </Card>
             </div>
-            <Button variant="link" className="w-fit p-0 h-auto text-primary mt-4" asChild>
-              <Link href="/services" className="flex items-center text-lg">
-                Explore all services <ArrowRight className="ml-2 w-4 h-4" />
+            <Button variant="outline" className="h-12 px-8 text-lg glass group" asChild>
+              <Link href="/services">
+                Explore All Services
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-          </div>
-          <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl group border border-primary/10">
-            <img src="/icins.jpeg" alt="Neural Stack Feature Icons" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
           </div>
         </div>
       </section>
@@ -158,6 +157,91 @@ export default function Home() {
                 </CardContent>
               </Card>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance & Security Section */}
+      <section className="container mx-auto px-4 py-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Enterprise Standards</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Compliance & Security</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              We build with a security-first mindset, ensuring your data remains protected and your
+              operations stay compliant with global standards.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="glass border-primary/5 hover:border-primary/20 transition-all duration-300">
+              <CardContent className="pt-8">
+                <div className="w-20 h-20 rounded-2xl bg-white/5 p-3 mb-6 border border-white/10 mx-auto">
+                  <img src="/hippa.png" alt="HIPAA Compliance" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-center">HIPAA Compliance</h3>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <span>Full BAA (Business Associate Agreement) management for health tech partners.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <span>Strict administrative and physical safeguards for PHI (Protected Health Information).</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <span>Audit-ready logging and monitoring of all data access and model activity.</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="glass border-primary/5 hover:border-primary/20 transition-all duration-300">
+              <CardContent className="pt-8">
+                <div className="w-20 h-20 rounded-2xl bg-white/5 p-3 mb-6 border border-white/10 mx-auto">
+                  <img src="/DarkSecurity.png" alt="Advanced Data Security" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-center">Advanced Data Security</h3>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+                    <span><strong>AES-256 Encryption at Rest:</strong> Strongest military-grade standards for stored data.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+                    <span><strong>TLS 1.3 in Transit:</strong> End-to-end encrypted communication for all API and data streams.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+                    <span><strong>SOC 2 Readiness:</strong> Controls aligned with Trust Services Criteria for security and availability.</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="glass border-primary/5 hover:border-primary/20 transition-all duration-300">
+              <CardContent className="pt-8">
+                <div className="w-20 h-20 rounded-2xl bg-white/5 p-3 mb-6 border border-white/10 mx-auto">
+                  <img src="/patientprivacy.png" alt="Patient & Client Privacy" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-center">Privacy & Control</h3>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <span><strong>Data Minimization:</strong> We only process what is strictly necessary for your AI workflows.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <span><strong>RBAC (Access Control):</strong> Granular permissions ensuring data is only visible to authorized eyes.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <span><strong>De-identification:</strong> Advanced masking and tokenization for sensitive prompt data.</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
