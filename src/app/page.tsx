@@ -8,18 +8,18 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-24 pb-24">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-32 pb-16 overflow-hidden bg-dark-flow min-h-[80vh] flex items-center">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="outline" className="mb-6 py-1 px-4 border-primary/50 text-primary backdrop-blur-sm">
+            <Badge variant="outline" className="mb-6 py-1 px-4 border-primary/50 text-white backdrop-blur-sm bg-primary/20">
               <Sparkles className="w-3.5 h-3.5 mr-2" />
               Intelligence Meets Implementation
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-white drop-shadow-2xl">
               Advanced AI Solutions + <br />
-              <span className="text-primary italic">Full-Stack Excellence</span>
+              <span className="text-secondary italic">Full-Stack Excellence</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
               We bridge the gap between cutting-edge Machine Learning and production-ready Web Development.
               Neural Stack helps Austin's most ambitious businesses build what's next.
             </p>
@@ -30,47 +30,52 @@ export default function Home() {
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="h-12 px-8 text-base glass" asChild>
+              <Button size="lg" variant="outline" className="h-12 px-8 text-base glass text-white border-white/20" asChild>
                 <Link href="/portfolio">View Recent Work</Link>
               </Button>
             </div>
           </div>
         </div>
-
-        {/* Animated Background Element */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-20 pointer-events-none animate-pulse" />
       </section>
 
       {/* Services Brief */}
       <section className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col gap-6">
-            <h2 className="text-3xl font-bold">Specialized Services</h2>
+            <h2 className="text-4xl font-bold">Specialized Services</h2>
             <p className="text-muted-foreground text-lg">
               We don't just build websites; we build intelligent systems. Our dual expertise allows us
               to integrate AI directly into your business workflow.
             </p>
-            <Button variant="link" className="w-fit p-0 h-auto text-primary" asChild>
-              <Link href="/services" className="flex items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+              <Card className="glass border-primary/10">
+                <CardContent className="pt-6">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <Bot className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-bold mb-2 text-lg">AI-Driven Solutions</h3>
+                  <p className="text-sm text-muted-foreground">Symbolizes intelligence and advanced processing.</p>
+                </CardContent>
+              </Card>
+              <Card className="glass border-primary/10">
+                <CardContent className="pt-6">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <Cpu className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-bold mb-2 text-lg">Scalable Infrastructure</h3>
+                  <p className="text-sm text-muted-foreground">Represents growth and expandability built for scale.</p>
+                </CardContent>
+              </Card>
+            </div>
+            <Button variant="link" className="w-fit p-0 h-auto text-primary mt-4" asChild>
+              <Link href="/services" className="flex items-center text-lg">
                 Explore all services <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Card className="glass border-primary/10">
-              <CardContent className="pt-6">
-                <Bot className="w-10 h-10 text-primary mb-4" />
-                <h3 className="font-bold mb-2">AI/ML Strategy</h3>
-                <p className="text-sm text-muted-foreground">From discovery to implementation, we guide your AI journey.</p>
-              </CardContent>
-            </Card>
-            <Card className="glass border-primary/10">
-              <CardContent className="pt-6">
-                <Code className="w-10 h-10 text-primary mb-4" />
-                <h3 className="font-bold mb-2">Full-Stack Dev</h3>
-                <p className="text-sm text-muted-foreground">Premium React/Next.js applications built for scale.</p>
-              </CardContent>
-            </Card>
+          <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl group border border-primary/10">
+            <img src="/icins.jpeg" alt="Neural Stack Feature Icons" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
           </div>
         </div>
       </section>
@@ -150,18 +155,17 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="container mx-auto px-4">
-        <div className="glass p-12 md:p-24 rounded-3xl text-center relative overflow-hidden">
+        <div className="bg-dark-flow p-12 md:p-24 rounded-3xl text-center relative overflow-hidden border border-white/10 shadow-3xl">
           <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to evolve your digital presence?</h2>
-            <p className="text-xl text-muted-foreground mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">Ready to evolve your digital presence?</h2>
+            <p className="text-xl text-blue-100 mb-12">
               Whether you need a specialized AI proof-of-concept or a full-scale web application,
               we're here to build it.
             </p>
-            <Button size="lg" className="h-14 px-12 text-lg" asChild>
+            <Button size="lg" className="h-14 px-12 text-lg bg-secondary hover:bg-secondary/90 text-white" asChild>
               <Link href="/contact">Book a Discovery Call</Link>
             </Button>
           </div>
-          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[80px]" />
         </div>
       </section>
     </div>

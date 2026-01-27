@@ -120,3 +120,25 @@
   background-image: radial-gradient(circle at 2px 2px, var(--border) 1px, transparent 0);
   background-size: 24px 24px;
 }
+
+.bg-light-neural {
+  background-image: url("/light bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bg-dark-flow {
+  background-image: linear-gradient(rgba(10, 14, 69, 0.8), rgba(10, 14, 69, 0.8)), url("/darkbg.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.glass {
+  @apply bg-background/60 backdrop-blur-md border border-white/10;
+}
+
+.neural-grid {
+  background-image: radial-gradient(circle at 2px 2px, var(--border) 1px, transparent 0);
+  background-size: 24px 24px;
+}
