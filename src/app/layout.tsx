@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Analytics } from "@vercel/analytics/next";
+import { Chatbot } from "@/components/chatbot";
 
 const fontHeading = Montserrat({
   variable: "--font-heading",
@@ -52,6 +53,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <Analytics />
+        <Chatbot />
       </body>
     </html>
   );
