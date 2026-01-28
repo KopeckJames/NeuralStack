@@ -77,23 +77,23 @@ export default function About() {
                             {[
                                 {
                                     category: "Languages",
-                                    items: ["JavaScript (ES6+)", "Python", "HTML5", "CSS3", "SQL", "GraphQL"]
+                                    items: ["TypeScript", "JavaScript (ES6+)", "Python", "HTML5", "CSS3", "SQL"]
                                 },
                                 {
                                     category: "Frontend",
-                                    items: ["React.js", "jQuery", "Bootstrap", "Handlebars.js", "PWA/Service Workers", "Node.js"]
+                                    items: ["Next.js (App Router)", "React.js", "Tailwind CSS", "shadcn/ui", "PWA", "Service Workers"]
                                 },
                                 {
                                     category: "Backend",
-                                    items: ["Node.js", "Express.js", "REST APIs", "Apollo Server"]
+                                    items: ["Node.js", "Express.js", "WebSockets", "REST APIs", "Apollo Server", "GraphQL"]
                                 },
                                 {
                                     category: "Database",
-                                    items: ["MongoDB (Mongoose)", "MySQL (Sequelize)", "Weaviate"]
+                                    items: ["PostgreSQL", "MongoDB (Mongoose)", "MySQL (Sequelize)", "Weaviate", "In-Memory Storage"]
                                 },
                                 {
                                     category: "Tools",
-                                    items: ["Git", "Jest", "Webpack", "npm", "Insomnia/Postman", "Heroku", "Vercel", "AWS"]
+                                    items: ["Git", "Jest", "Vercel", "AWS", "libsodium-wrappers", "npm", "Docker", "Heroku"]
                                 }
                             ].map((group) => (
                                 <div key={group.category} className="contents">
