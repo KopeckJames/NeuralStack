@@ -141,7 +141,7 @@ export function Chatbot() {
                                     </Button>
                                 </form>
                                 <p className="text-[9px] text-muted-foreground mt-3 text-center uppercase tracking-widest opacity-50">
-                                    Powered by Gemini 2.0
+                                    Powered by Gemini 1.5
                                 </p>
                             </div>
                         </Card>

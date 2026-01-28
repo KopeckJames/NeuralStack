@@ -10,7 +10,7 @@ export async function sendChatMessage(messages: { role: "user" | "model"; conten
     }
 
     const model = genAI.getGenerativeModel({
-        model: "gemini-2.0-flash",
+        model: "gemini-1.5-flash",
         systemInstruction: `You are the Neural Stack AI Assistant. 
         Tone: Professional yet fun, technical yet accessible. 
         Personality: Specialized generalist. You are an expert in AI/ML and premium web development. 
