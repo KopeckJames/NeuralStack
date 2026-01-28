@@ -60,6 +60,62 @@ export default function About() {
                     </div>
                 </div>
             </section>
+            {/* Tech Stack Section */}
+            <section className="py-24 bg-primary/5">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-5xl mx-auto">
+                        <div className="text-center mb-16">
+                            <Badge variant="outline" className="mb-4">Our Arsenal</Badge>
+                            <h2 className="text-4xl md:text-5xl font-bold mb-6">World-Class Tech Stack</h2>
+                            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                                We utilize a curated selection of industry-best technologies to build robust,
+                                scalable, and intelligent applications.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {[
+                                {
+                                    category: "Languages",
+                                    items: ["JavaScript (ES6+)", "HTML5", "CSS3", "SQL", "GraphQL"]
+                                },
+                                {
+                                    category: "Frontend",
+                                    items: ["React.js", "jQuery", "Bootstrap", "Handlebars.js", "PWA/Service Workers", "Node.js"]
+                                },
+                                {
+                                    category: "Backend",
+                                    items: ["Node.js", "Express.js", "REST APIs", "Apollo Server"]
+                                },
+                                {
+                                    category: "Database",
+                                    items: ["MongoDB (Mongoose)", "MySQL (Sequelize)", "Weaviate"]
+                                },
+                                {
+                                    category: "Tools",
+                                    items: ["Git", "Jest", "Webpack", "npm", "Insomnia/Postman", "Heroku", "Vercel", "AWS"]
+                                }
+                            ].map((group) => (
+                                <div key={group.category} className="contents">
+                                    <Card className="glass border-primary/10 hover:border-primary/30 transition-all duration-300 overflow-hidden">
+                                        <CardContent className="pt-8">
+                                            <h3 className="text-lg font-bold mb-4 text-primary uppercase tracking-widest">{group.category}</h3>
+                                            <div className="flex flex-wrap gap-2">
+                                                {group.items.map((item) => (
+                                                    <Badge key={item} variant="secondary" className="bg-white/5 border-white/10 hover:bg-white/10 transition-colors">
+                                                        {item}
+                                                    </Badge>
+                                                ))}
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                    {group.category === "Tools" && <div key="spacer" className="hidden lg:block" />}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto flex flex-col items-center gap-8">
