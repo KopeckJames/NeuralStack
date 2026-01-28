@@ -64,13 +64,24 @@ export default function About() {
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto flex flex-col items-center gap-8">
                     <div className="glass p-8 rounded-2xl border-primary/20 w-fit text-center">
-                        <div className="flex items-center justify-center gap-4 mb-4">
-                            <MapPin className="text-primary w-6 h-6" />
-                            <h3 className="font-bold">Based in Austin, TX</h3>
+                        <div className="flex flex-col items-center gap-6">
+                            <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
+                                <img
+                                    src="/me2.png"
+                                    alt="Founder Portrait"
+                                    className="object-cover w-full h-full"
+                                />
+                            </div>
+                            <div>
+                                <div className="flex items-center justify-center gap-4 mb-4">
+                                    <MapPin className="text-primary w-6 h-6" />
+                                    <h3 className="font-bold">Based in Austin, TX</h3>
+                                </div>
+                                <p className="italic text-muted-foreground max-w-md">
+                                    "We're here to help Austin businesses navigate the AI revolution without the fluff. Real engineering, real results."
+                                </p>
+                            </div>
                         </div>
-                        <p className="italic text-muted-foreground max-w-md">
-                            "We're here to help Austin businesses navigate the AI revolution without the fluff. Real engineering, real results."
-                        </p>
                     </div>
                     <Button size="lg" asChild>
                         <a href="/contact">Let's Build Something Great</a>
