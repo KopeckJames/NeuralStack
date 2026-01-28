@@ -23,7 +23,7 @@ export function Footer() {
                             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
                                 <Twitter className="w-5 h-5" />
                             </Link>
-                            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                            <Link href="https://www.linkedin.com/company/neurstack" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                                 <Linkedin className="w-5 h-5" />
                             </Link>
                             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
