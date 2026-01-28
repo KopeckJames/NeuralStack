@@ -88,14 +88,14 @@ export function Chatbot() {
                                     >
                                         <div className={`max-w-[85%] flex gap-3 ${msg.role === "user" ? "flex-row-reverse" : ""}`}>
                                             <div className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center border ${msg.role === "user"
-                                                    ? "bg-primary/20 border-primary/30 text-primary"
-                                                    : "bg-[#0A0E45]/80 border-primary/10 text-primary"
+                                                ? "bg-primary/20 border-primary/30 text-primary"
+                                                : "bg-[#0A0E45]/80 border-primary/10 text-primary"
                                                 }`}>
                                                 {msg.role === "user" ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
                                             </div>
                                             <div className={`p-3 rounded-2xl text-sm leading-relaxed ${msg.role === "user"
-                                                    ? "bg-primary text-white rounded-tr-none"
-                                                    : "glass rounded-tl-none border-primary/10"
+                                                ? "bg-primary text-white rounded-tr-none"
+                                                : "glass rounded-tl-none border-primary/10"
                                                 }`}>
                                                 {msg.content}
                                             </div>
@@ -141,7 +141,7 @@ export function Chatbot() {
                                     </Button>
                                 </form>
                                 <p className="text-[9px] text-muted-foreground mt-3 text-center uppercase tracking-widest opacity-50">
-                                    Powered by Gemini 2.0 & NotebookLM
+                                    Powered by Gemini 2.0
                                 </p>
                             </div>
                         </Card>

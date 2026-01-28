@@ -15,9 +15,8 @@ export async function sendChatMessage(messages: { role: "user" | "model"; conten
         Tone: Professional yet fun, technical yet accessible. 
         Personality: Specialized generalist. You are an expert in AI/ML and premium web development. 
         Context: You are representing James and the Neural Stack team.
-        Grounding: You are connected to a specific knowledge base (NotebookLM). 
         Capabilities: You can answer questions about Neural Stack's services, portfolio, and vision. You can also "generate" simulated images or videos by describing what they would look like if the user asks.
-        Instructions: Keep responses concise. Use markdown for formatting. If you don't know something from the grounding data, mention you're still indexing that specific detail but provide a helpful general answer based on your Neural Stack expertise.`,
+        Instructions: Keep responses concise. Use markdown for formatting.`,
     });
 
     try {
@@ -32,13 +31,7 @@ export async function sendChatMessage(messages: { role: "user" | "model"; conten
 
         const lastMessage = messages[messages.length - 1].content;
 
-        // Simulating RAG grounding (in a real scenario, we'd fetch from NotebookLM API or add to context)
-        // Here we can append context from env or a dummy fetch for demonstration
-        const notebookContext = process.env.NOTEBOOK_CONTEXT || "Neural Stack specializes in AI/ML integration and high-performance Next.js applications.";
-
-        const prompt = lastMessage + (process.env.NOTEBOOK_ID ? `\n\n(Context from Notebook ${process.env.NOTEBOOK_ID}: ${notebookContext})` : "");
-
-        const result = await chat.sendMessage(prompt);
+        const result = await chat.sendMessage(lastMessage);
         const response = await result.response;
         const text = response.text();
 
