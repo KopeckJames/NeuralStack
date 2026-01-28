@@ -1,43 +1,43 @@
 "use server";
 
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import OpenAI from "openai";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY || "",
+});
 
 export async function sendChatMessage(messages: { role: "user" | "model"; content: string }[]) {
-    if (!process.env.GEMINI_API_KEY) {
-        return { error: "Gemini API Key is not configured." };
+    if (!process.env.OPENAI_API_KEY) {
+        return { error: "OpenAI API Key is not configured." };
     }
 
-    const model = genAI.getGenerativeModel({
-        model: "gemini-1.5-flash",
-        systemInstruction: `You are the Neural Stack AI Assistant. 
-        Tone: Professional yet fun, technical yet accessible. 
-        Personality: Specialized generalist. You are an expert in AI/ML and premium web development. 
-        Context: You are representing James and the Neural Stack team.
-        Capabilities: You can answer questions about Neural Stack's services, portfolio, and vision. You can also "generate" simulated images or videos by describing what they would look like if the user asks.
-        Instructions: Keep responses concise. Use markdown for formatting.`,
-    });
-
     try {
-        const history = messages.slice(0, -1).map(m => ({
-            role: m.role === "user" ? "user" : "model",
-            parts: [{ text: m.content }],
-        }));
-
-        const chat = model.startChat({
-            history: history,
+        const response = await openai.chat.completions.create({
+            model: "gpt-4o",
+            messages: [
+                {
+                    role: "system",
+                    content: `You are the Neural Stack AI Assistant. 
+                    Tone: Professional yet fun, technical yet accessible. 
+                    Personality: Specialized generalist. You are an expert in AI/ML and premium web development. 
+                    Context: You are representing James and the Neural Stack team.
+                    Capabilities: You can answer questions about Neural Stack's services, portfolio, and vision. You can also "generate" simulated images or videos by describing what they would look like if the user asks.
+                    Instructions: Keep responses concise. Use markdown for formatting.`
+                },
+                ...messages.map(m => ({
+                    role: m.role === "user" ? "user" as const : "assistant" as const,
+                    content: m.content,
+                }))
+            ],
+            temperature: 0.7,
+            max_tokens: 1000,
         });
 
-        const lastMessage = messages[messages.length - 1].content;
-
-        const result = await chat.sendMessage(lastMessage);
-        const response = await result.response;
-        const text = response.text();
+        const text = response.choices[0].message?.content || "I'm sorry, I couldn't generate a response.";
 
         return { content: text };
     } catch (error) {
-        console.error("Chat API Error:", error);
+        console.error("OpenAI API Error:", error);
         return { error: "System overload. Please try again in a bit." };
     }
 }
