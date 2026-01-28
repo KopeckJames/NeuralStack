@@ -77,7 +77,7 @@ export default function About() {
                             {[
                                 {
                                     category: "Languages",
-                                    items: ["JavaScript (ES6+)", "HTML5", "CSS3", "SQL", "GraphQL"]
+                                    items: ["JavaScript (ES6+)", "Python", "HTML5", "CSS3", "SQL", "GraphQL"]
                                 },
                                 {
                                     category: "Frontend",
