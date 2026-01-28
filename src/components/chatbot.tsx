@@ -6,6 +6,7 @@ import { MessageSquare, X, Send, Bot, User, Sparkles, Minus } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { sendChatMessage } from "@/app/actions/chat";
+import ReactMarkdown from "react-markdown";
 
 export function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -95,9 +96,23 @@ export function Chatbot() {
                                             </div>
                                             <div className={`p-3 rounded-2xl text-sm leading-relaxed ${msg.role === "user"
                                                 ? "bg-primary text-white rounded-tr-none"
-                                                : "glass rounded-tl-none border-primary/10"
+                                                : "glass rounded-tl-none border-primary/10 prose prose-invert prose-sm max-w-none"
                                                 }`}>
-                                                {msg.content}
+                                                {msg.role === "user" ? (
+                                                    msg.content
+                                                ) : (
+                                                    <ReactMarkdown
+                                                        components={{
+                                                            p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
+                                                            ul: ({ node, ...props }) => <ul className="list-disc ml-4 mb-2" {...props} />,
+                                                            ol: ({ node, ...props }) => <ol className="list-decimal ml-4 mb-2" {...props} />,
+                                                            li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+                                                            strong: ({ node, ...props }) => <strong className="font-bold text-primary-foreground" {...props} />,
+                                                        }}
+                                                    >
+                                                        {msg.content}
+                                                    </ReactMarkdown>
+                                                )}
                                             </div>
                                         </div>
                                     </div>

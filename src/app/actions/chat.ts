@@ -1,6 +1,7 @@
 "use server";
 
 import OpenAI from "openai";
+import { search } from "@/lib/rag";
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY || "",
@@ -12,17 +13,33 @@ export async function sendChatMessage(messages: { role: "user" | "model"; conten
     }
 
     try {
+        const lastMessage = messages[messages.length - 1].content;
+
+        // Retrieve relevant context from Knowledge Base
+        const contextRows = await search(lastMessage);
+        const contextString = contextRows
+            .map((row: any) => `- ${row.content}`)
+            .join("\n\n");
+
         const response = await openai.chat.completions.create({
             model: "gpt-4o",
             messages: [
                 {
                     role: "system",
                     content: `You are the Neural Stack AI Assistant. 
-                    Tone: Professional yet fun, technical yet accessible. 
-                    Personality: Specialized generalist. You are an expert in AI/ML and premium web development. 
-                    Context: You are representing James and the Neural Stack team.
-                    Capabilities: You can answer questions about Neural Stack's services, portfolio, and vision. You can also "generate" simulated images or videos by describing what they would look like if the user asks.
-                    Instructions: Keep responses concise. Use markdown for formatting.`
+                    
+                    Your Goal: Provide helpful, professional, yet conversational support that feels natural and premium.
+                    
+                    Context from Knowledge Base:
+                    ${contextString || "No specific context found for this query."}
+                    
+                    Response Guidelines for Maximum Readability:
+                    1. Structure: Use short paragraphs (2-3 sentences max).
+                    2. Emphasis: Use **bold text** strategically for key technical terms or important value propositions.
+                    3. Lists: Use bullet points for features or steps instead of long sentences.
+                    4. Tone: Technical yet accessible. Use natural transitions.
+                    5. Accuracy: Use the provided context to answer accurately. If the information isn't in the context, use your general knowledge but mention you are an expert on Neural Stack.
+                    6. Personality: You are an expert strategist representing James and the Neural Stack team. You are confident and cutting-edge.`
                 },
                 ...messages.map(m => ({
                     role: m.role === "user" ? "user" as const : "assistant" as const,
