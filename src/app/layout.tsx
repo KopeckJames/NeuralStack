@@ -34,10 +34,11 @@ export default function RootLayout({
         {/* Video Background Container */}
         <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
           <video
-            autoPlay
-            muted
-            loop
-            playsInline
+            autoPlay={true}
+            muted={true}
+            loop={true}
+            playsInline={true}
+            preload="auto"
             className="absolute min-w-full min-h-full object-cover"
           >
             <source src="/lpv2.mp4" type="video/mp4" />
