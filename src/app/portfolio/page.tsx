@@ -10,8 +10,8 @@ const projects = [
         client: "B2B Professional Services",
         description: "Custom AI implementation that reduced manual processing time by 80% for professional service providers.",
         tags: ["Enterprise", "AI Integration", "Next.js"],
-        icon: Cpu,
-        color: "from-primary/20",
+        screenshot: "/cooforrent_screenshot.png",
+        overlayColor: "bg-primary/10",
         slug: "cooforrent"
     },
     {
@@ -19,8 +19,8 @@ const projects = [
         client: "B2C Home Services",
         description: "High-performance web application designed to capture luxury leads and streamline booking for home services.",
         tags: ["E-commerce", "Conversion Plus", "Custom Scheduling", "AI Integration", "AI Lead Discovery", "Automation"],
-        icon: Globe,
-        color: "from-accent/20",
+        screenshot: "/velvet_screenshot.png",
+        overlayColor: "bg-accent/10",
         slug: "velvet-water"
     }
 ];
@@ -40,13 +40,13 @@ export default function Portfolio() {
                 {projects.map((project) => (
                     <Link key={project.slug} href={`/portfolio/${project.slug}`} className="group">
                         <Card className="overflow-hidden border-none glass hover:ring-2 ring-primary/50 transition-all h-full flex flex-col">
-                            <div className={`aspect-video bg-muted relative overflow-hidden bg-gradient-to-br ${project.color} to-transparent`}>
-                                <div className="absolute inset-0 flex items-center justify-center p-12">
-                                    <div className="text-center group-hover:scale-110 transition-transform duration-500">
-                                        <project.icon className="w-20 h-20 text-foreground opacity-20 mx-auto mb-4" />
-                                        <h3 className="text-3xl font-bold">{project.title}</h3>
-                                    </div>
-                                </div>
+                            <div className="aspect-video bg-muted relative overflow-hidden">
+                                <img
+                                    src={project.screenshot}
+                                    alt={project.title}
+                                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className={`absolute inset-0 ${project.overlayColor} mix-blend-overlay pointer-events-none`} />
                             </div>
                             <CardContent className="p-8 flex-grow flex flex-col">
                                 <div className="flex flex-wrap gap-2 mb-6">
