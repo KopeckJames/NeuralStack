@@ -18,7 +18,7 @@ const projects = [
         title: "Velvet Water",
         client: "B2C Home Services",
         description: "High-performance web application designed to capture luxury leads and streamline booking for home services.",
-        tags: ["E-commerce", "Conversion Plus", "UI/UX"],
+        tags: ["E-commerce", "Conversion Plus", "Custom Scheduling", "AI Integration", "AI Lead Discovery", "Automation"],
         icon: Globe,
         color: "from-accent/20",
         slug: "velvet-water"

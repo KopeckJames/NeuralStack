@@ -141,9 +141,13 @@ export default function Home() {
                   <div className="absolute inset-0 bg-accent/10 mix-blend-overlay pointer-events-none" />
                 </div>
                 <CardContent className="p-8">
-                  <div className="flex gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     <Badge variant="secondary">E-commerce</Badge>
                     <Badge variant="secondary">Conversion Plus</Badge>
+                    <Badge variant="secondary">Custom Scheduling</Badge>
+                    <Badge variant="secondary">AI Integration</Badge>
+                    <Badge variant="secondary">AI Lead Discovery</Badge>
+                    <Badge variant="secondary">Automation</Badge>
                   </div>
                   <h4 className="text-xl font-bold mb-2">Premium Digital Showroom</h4>
                   <p className="text-muted-foreground line-clamp-2">
